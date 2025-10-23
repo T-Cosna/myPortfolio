@@ -1,0 +1,319 @@
+:root {
+    --bg: #D0EBEF; /* light pale cyan background */
+    --card: rgba(255, 255, 255, 0.1); /* subtle card overlay */
+    --muted: #08876E; /* muted teal for text */
+    --accent: #EF781B; /* primary accent (orange) */
+    --radius: 18px;
+    --accent-gradient: linear-gradient(90deg, #EF781B, #08876E); /* orange to teal gradient */
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: var(--bg);
+    /* background: radial-gradient(circle at top left, #101014, #0b0b0c); */
+    color: var(--accent);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    /* background: rgba(17, 18, 20, 0.85); */
+    backdrop-filter: blur(8px);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar .logo {
+    font-size: 22px;
+    font-weight: 700;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar a {
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 22px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--accent);
+}
+
+/* --- WRAP: left 40%, right 60% --- */
+.wrap {
+    display: flex;
+    gap: 40px;
+    padding: 48px;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.wrap2 {
+    /* display: flex; */
+    /* gap: 40px; */
+    padding: 48px;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+/* LEFT side smaller */
+.left {
+    flex: 0 0 30%;
+    max-width: 40%;
+    position: relative;
+}
+
+.left .photo {
+    width: 80%;
+    height: 620px;
+    background-image: url('Tshiamo.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: contrast(.95) saturate(.9);
+    border-radius: var(--radius);
+}
+
+.overlay-video {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 440px;
+    height: 680px;
+    border-radius: 18px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.overlay-frame {
+    position: absolute;
+    inset: 12px;
+    border-radius: 14px;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .03);
+}
+
+.right {
+    flex: 0 0 70%;
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- HEADER --- */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.name {
+    font-size: 56px;
+    font-weight: 800;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.role {
+    color: var(--muted);
+    font-weight: 500;
+    margin-top: 6px;
+}
+
+/* --- BIO --- */
+.bio {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 24px;
+    border-radius: var(--radius);
+    backdrop-filter: blur(10px);
+    margin-bottom: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bio:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    background: rgba(25, 26, 30, 0.9);
+}
+
+/* --- GRID --- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.card.full {
+    grid-column: 1 / -1;
+}
+
+/* --- CARDS --- */
+.card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    background: rgba(25, 26, 30, 0.9);
+}
+
+.card h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
+
+/* --- CHIPS --- */
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chip {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--muted);
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: background 0.3s, color 0.3s;
+}
+
+.chip:hover {
+    background: var(--accent-gradient);
+    color: #111;
+}
+
+/* --- BUTTONS --- */
+.links {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 14px;
+    border-radius: 12px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--accent-gradient);
+    color: #111;
+    transform: translateY(-2px);
+}
+
+/* --- SOCIALS --- */
+.socials a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.socials a:hover {
+    color: #b7d5ff;
+}
+
+/* --- FOOTER --- */
+.footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 30px 10px;
+    font-size: 14px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* --- FULL WIDTH SECTIONS (PROJECTS, EDUCATION, EXPERIENCE) --- */
+.full-width-section {
+    width: 100%;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.full-width-section .card.full {
+    grid-column: 1 / -1;
+}
+
+/* --- ANIMATION --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .wrap {
+        flex-direction: column;
+        padding: 32px 20px;
+    }
+
+    .grid,
+    .full-width-section {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+
+    .name {
+        font-size: 42px;
+    }
+
+    .left,
+    .right {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .left .photo {
+        height: 400px;
+    }
+
+    .overlay-video {
+        width: 90%;
+        height: 300px;
+        left: 5%;
+        top: 5%;
+    }
+}
