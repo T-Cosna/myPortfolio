@@ -58,7 +58,7 @@ body {
     color: var(--accent);
 }
 
-/* --- WRAP: left 40%, right 60% --- */
+
 .wrap {
     display: flex;
     gap: 40px;
@@ -82,10 +82,10 @@ body {
     position: relative;
 }
 
-.left .photo {
+.left img {
     width: 80%;
     height: 620px;
-    background-image: url('Tshiamo.jpg');
+    background-image: url('./Tshiamo.jpg');
     background-size: cover;
     background-position: center;
     filter: contrast(.95) saturate(.9);
@@ -308,6 +308,7 @@ body {
 
     .left .photo {
         height: 400px;
+        
     }
 
     .overlay-video {
